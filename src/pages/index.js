@@ -33,7 +33,7 @@ const IndexPage = () => (
       }
     `}
     render={props => (
-      <div className="index">
+      <div>
         <div className="jumbotron gradient">
           <h1>{props.site.siteMetadata.title}</h1>
           <h2>{props.site.siteMetadata.subtitle}</h2>
