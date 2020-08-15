@@ -1,152 +1,47 @@
-.gradient {
-  background: rgb(96, 108, 136);
-  background: linear-gradient(
-    to bottom,
-    rgb(96, 108, 136) 0%,
-    rgb(63, 76, 107) 100%
-  );
+@font-face {
+  font-family: LemonTuesday;
+  src: url("../assets/lemon-tuesday.otf") format("opentype");
 }
 
-.navbar {
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@font-face {
+  font-family: Muli;
+  src: url("../assets/Muli.ttf") format("opentype");
 }
 
-.navbar h1 {
-  font-size: 20px;
-  margin: inherit;
-  padding: inherit;
-  font-weight: bold;
+body,
+html {
+  margin: 0;
+  font-family: "Muli";
+  overflow-x: hidden;
 }
 
-.navbar h2 {
-  font-size: 14px;
-  margin: inherit;
-  padding: inherit;
-  text-transform: uppercase;
-  color: white;
-}
-
-.jumbotron.gradient {
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.navbar-brand.navbar-brand {
-  text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-}
-
-.navbar-brand.navbar-brand:hover {
-  color: #777;
-}
-
-.navbar-brand.navbar-brand:focus {
-  color: white;
-}
-
-.lesson {
-  margin: 15px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: scroll;
-}
-
-.lesson p {
-  clear: both;
-}
-
-.lesson-links {
+main {
+  padding: 30px 0;
   font-size: 18px;
-  padding: 15px 0;
-}
-
-.next {
-  float: right;
-}
-
-.prev {
-  float: left;
-}
-
-.lesson-title {
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.klipse-result {
-  border: 1px solid #90b4fe;
-  padding-top: 8px;
   position: relative;
-  width: 100%;
+  left: 100px;
+  top: 120px;
+  min-height: calc(100vh - 440px);
 }
 
-.klipse-result .CodeMirror-wrap {
-  width: 100%;
-  border-color: transparent;
+main p {
+  max-width: 600px;
 }
 
-.klipse-result::before {
-  content: "result";
-  background-color: white;
-  position: absolute;
-  top: -13px;
-  height: 13px;
+h2:first-child {
+  font-family: "LemonTuesday";
+  color: #4152a4;
+  font-size: 4rem;
+  font-weight: 100;
 }
 
-.language-htm,
-.language-css,
-.language-js,
-.language-json {
-  width: 100%;
-}
-
-.gatsby-highlight {
-  /* border: 1px solid black; */
-  padding: 4px;
-  border-radius: 4px;
+.lesson-content {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  align-items: stretch;
 }
 
-.CodeMirror-wrap {
-  width: 100%;
-  font-size: 12px;
-  height: inherit;
-  margin-bottom: 12px;
-}
-
-.CodeMirror-gutters {
-  height: inherit !important;
-}
-
-.klipse-snippet > .CodeMirror {
-  border: none;
-  width: 100%;
-}
-
-.gatsby-highlight > .klipse-snippet {
-  border: 1px solid #90b4fe;
-  width: 100%;
-  border-right: none;
+.footer-image {
+  margin-top: 200px;
   position: relative;
-  margin-bottom: 15px;
-}
-
-.doggos {
-  width: 100%;
-  border: 1px solid #666;
-  border-radius: 5px;
+  bottom: -5px;
 }

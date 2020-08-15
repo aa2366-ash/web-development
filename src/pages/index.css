@@ -1,71 +1,167 @@
-body {
-  background-color: #eee;
+ul > li {
+  margin: 8px 0;
+}
+
+a {
+  color: #4152a4;
+}
+
+.header {
+  background-color: #4152a4;
+  color: white;
+  display: flex;
+  padding: 24px 44px;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+  font-family: LemonTuesday;
+  font-size: 1.7rem;
+}
+
+.lesson-links {
+  position: fixed;
+  right: 80px;
+  bottom: 60px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.lesson-links a {
+  background: #f2f1f2;
+  color: #4152a4;
+  padding: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 16px;
+}
+
+.index-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-wrapper img {
+  height: 800px;
+  position: relative;
+  top: -15px;
 }
 
 .index {
-  width: 97%;
-  max-width: 750px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.index .jumbotron {
-}
-
-.example-table {
-  border-collapse: separate;
-}
-
-.example-table td {
-  border: 1px solid black;
-  width: 20px;
-  height: 20px;
-}
-
-.example-table .current {
-  background-color: #fcc;
-}
-
-.example-table .n {
-  border-top-color: transparent;
-}
-
-.example-table .s {
-  border-bottom-color: transparent;
-}
-
-.example-table .e {
-  border-right-color: transparent;
-}
-
-.example-table .w {
-  border-left-color: transparent;
-}
-
-.lesson-content table {
-}
-
-.lesson-content td {
-  border: 1px solid black;
-  padding: 8px;
-}
-
-.lesson-content td input {
-  min-width: 300px;
-}
-
-.lesson-flex {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.random-tweet {
-  width: 100%;
-  margin-top: 100px;
+.index .main-card {
+  max-width: 600px;
+  margin-top: 48px;
 }
 
-.fem-link {
-  text-align: center;
+.main-card ol {
+  list-style-type: none;
+  padding: 0 15px;
+}
+
+.main-card a {
+  color: #4152a4;
+  font-size: 1.5rem;
+  margin: 4px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.main-card a:hover,
+.main-card a:focus {
+  text-decoration: underline;
+}
+
+.main-card .lesson-content {
+  align-items: flex-start;
+}
+
+.language-text {
+  background: #4152a4 !important;
+  padding: 2px 8px !important;
+}
+
+pre {
+  max-width: 800px !important;
+  overflow-x: auto !important;
+}
+
+.token.class-name {
+  color: #b6def8 !important;
+}
+
+.token.tag {
+  color: #f36648 !important;
+}
+
+.token.attr-name {
+  color: #ffae00 !important;
+}
+
+.token.string {
+  color: #ff919f !important;
+}
+
+.token.function {
+  color: #aab8ff !important;
+}
+
+.home-logo {
+  position: fixed;
+  right: 0;
+  top: 90px;
+  height: 91vh;
+}
+
+@media (max-width: 1200px) {
+  .home-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    left: 40px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .lesson-links {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .lesson-links a:first-child {
+    margin-left: 0;
+  }
+
+  ol {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  pre {
+    max-width: 80vw !important;
+  }
+}
+
+img {
+  max-width: 70vw;
 }

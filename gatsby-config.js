@@ -1,15 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter Course",
-    subtitle: "For making great content",
+    title: "Getting started with web development",
+    subtitle: "web development",
     description:
-      "This is the description that will show up when people share as well as on search engines",
-    keywords: [
-      "this is",
-      "a list of keywords and phrase",
-      "that search engines",
-      "will index your page for"
-    ]
+      "With our web development courses, go from no prior coding knowledge to crafting your own websites using HTML, CSS, JavaScript, and Node.js.",
+    keywords: ["guvi", "zen", "zen class", "full stack development"]
   },
   pathPrefix: "/web-development",
   plugins: [

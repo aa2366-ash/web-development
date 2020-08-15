@@ -1,50 +1,50 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Card from "../components/TOCCard";
-
+import { StaticQuery, graphql, Link } from "gatsby";
+import logo from "../assets/home-logo.svg";
 import "./index.css";
 
 const IndexPage = () => (
   <StaticQuery
     query={graphql`
-      query HomepageTOC {
-        site {
-          siteMetadata {
-            title
-            subtitle
-            description
-            keywords
-          }
-        }
-        allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___order] }) {
+      {
+        introductionQuery: allMarkdownRemark(
+          filter: { frontmatter: { section: { eq: "Introduction" } } }
+          sort: { order: ASC, fields: [frontmatter___order] }
+        ) {
           edges {
             node {
-              id
               frontmatter {
-                order
-                path
                 title
+                path
                 section
-                description
+                order
               }
             }
           }
         }
       }
     `}
-    render={props => (
-      <div>
-        <div className="jumbotron gradient">
-          <h1>{props.site.siteMetadata.title}</h1>
-          <h2>{props.site.siteMetadata.subtitle}</h2>
+    render={props => {
+      return (
+        <div>
+          <div>
+            <h1>Table of contents</h1>
+            <h2>Introduction</h2>
+            <ul>
+              {props.introductionQuery.edges.map(lesson => {
+                const { title, path } = lesson.node.frontmatter;
+                return (
+                  <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <img className="home-logo" src={logo} alt="" aria-hidden="true" />
         </div>
-
-        <Card
-          title="Table of Contents"
-          content={props.allMarkdownRemark.edges}
-        />
-      </div>
-    )}
+      );
+    }}
   />
 );
 
