@@ -37,8 +37,8 @@ export default function Template(props) {
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <div className="lesson-links">
-          {prevLink}
-          {nextLink}
+          {/* {prevLink}
+          {nextLink} */}
         </div>
       </div>
     </div>

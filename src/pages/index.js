@@ -7,8 +7,70 @@ const IndexPage = () => (
   <StaticQuery
     query={graphql`
       {
-        introductionQuery: allMarkdownRemark(
-          filter: { frontmatter: { section: { eq: "Introduction" } } }
+        htmlIntroductionQuery: allMarkdownRemark(
+          filter: { frontmatter: { section: { eq: "HTML" } } }
+          sort: { order: ASC, fields: [frontmatter___order] }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                path
+                section
+                order
+              }
+            }
+          }
+        }
+        cssIntroductionQuery: allMarkdownRemark(
+          filter: { frontmatter: { section: { eq: "CSS" } } }
+          sort: { order: ASC, fields: [frontmatter___order] }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                path
+                section
+                order
+              }
+            }
+          }
+        }
+        jsIntroductionQuery: allMarkdownRemark(
+          filter: { frontmatter: { section: { eq: "JS_INTRODUCTION" } } }
+          sort: { order: ASC, fields: [frontmatter___order] }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                path
+                section
+                order
+              }
+            }
+          }
+        }
+        intermediateJsQuery: allMarkdownRemark(
+          filter: {
+            frontmatter: { section: { eq: "INTERMEDIATE_JAVASCRIPT" } }
+          }
+          sort: { order: ASC, fields: [frontmatter___order] }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                path
+                section
+                order
+              }
+            }
+          }
+        }
+        advancedJsQuery: allMarkdownRemark(
+          filter: { frontmatter: { section: { eq: "ADVANCD_JAVASCRIPT" } } }
           sort: { order: ASC, fields: [frontmatter___order] }
         ) {
           edges {
@@ -29,9 +91,53 @@ const IndexPage = () => (
         <div>
           <div>
             <h1>Table of contents</h1>
-            <h2>Introduction</h2>
+            <h2>HTML</h2>
             <ul>
-              {props.introductionQuery.edges.map(lesson => {
+              {props.htmlIntroductionQuery.edges.map(lesson => {
+                const { title, path } = lesson.node.frontmatter;
+                return (
+                  <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <h2>CSS</h2>
+            <ul>
+              {props.cssIntroductionQuery.edges.map(lesson => {
+                const { title, path } = lesson.node.frontmatter;
+                return (
+                  <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <h2>Javascript Introduction</h2>
+            <ul>
+              {props.jsIntroductionQuery.edges.map(lesson => {
+                const { title, path } = lesson.node.frontmatter;
+                return (
+                  <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <h2>Intermediate Javascript</h2>
+            <ul>
+              {props.intermediateJsQuery.edges.map(lesson => {
+                const { title, path } = lesson.node.frontmatter;
+                return (
+                  <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <h2>Advanced Javascript</h2>
+            <ul>
+              {props.advancedJsQuery.edges.map(lesson => {
                 const { title, path } = lesson.node.frontmatter;
                 return (
                   <li key={path}>
